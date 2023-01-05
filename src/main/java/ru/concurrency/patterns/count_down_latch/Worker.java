@@ -15,8 +15,8 @@ public class Worker implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Worker done...");
-        outputScraper.add("Counted down");
+        System.out.println("Worker " + Thread.currentThread().getName() + " done...");
+        outputScraper.add("Counted down " + Thread.currentThread().getName());
         countDownLatch.countDown();
     }
 }
