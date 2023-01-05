@@ -1,2 +1,17 @@
 # concurrency-patterns
-Concurrency patterns
+Паттерны многопоточности:
+* Active object
+* Cyclic barrier
+* Double checking locking
+* Leader followers
+* Monitor object
+* Reactor
+
+Очереди (конспект):
+* ArrayBlockingQueue — очередь, реализующая классический кольцевой буфер;
+* LinkedBlockingQueue — односторонняя очередь на связанных узлах;
+* LinkedBlockingDeque — двунаправленная очередь на связанных узлах;
+* SynchronousQueue — блокирующую очередь без емкости (операция добавления одного потока находится в ожидании соответствующей операции удаления в другом потоке);
+* LinkedTransferQueue — реализация очереди на основе интерфейса TransferQueue;
+* DelayQueue — неограниченная блокирующая очередь, реализующая интерфейс Delayed;
+* PriorityBlockingQueue — реализация очереди на основе интерфейса PriorityQueue.
