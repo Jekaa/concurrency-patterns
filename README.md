@@ -1,11 +1,15 @@
 # concurrency-patterns
 Паттерны многопоточности:
 * Active object
-* Cyclic barrier
+* CyclicBarrier
 * Double checking locking
 * Leader followers
 * Monitor object
 * Reactor
+* CountDownLatch
+* Exchanger
+* Phaser
+* Semaphore
 
 Очереди (конспект):
 * ArrayBlockingQueue — очередь, реализующая классический кольцевой буфер;
