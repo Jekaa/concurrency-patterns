@@ -6,15 +6,16 @@ import java.util.concurrent.Exchanger;
 
 public class Writer implements Runnable {
 
-    private Exchanger<Queue<String>> writerExchanger;
+    private final Exchanger<Queue<String>> writerExchanger;
+    private Queue<String> writerBuffer;
 
     public Writer(Exchanger<Queue<String>> writerExchanger) {
         this.writerExchanger = writerExchanger;
+        this.writerBuffer = new ConcurrentLinkedQueue<>();
     }
 
     @Override
     public void run() {
-        Queue<String> writerBuffer = new ConcurrentLinkedQueue<>();
         try {
             writerBuffer = writerExchanger.exchange(writerBuffer);
         } catch (InterruptedException e) {

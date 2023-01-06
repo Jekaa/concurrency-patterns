@@ -9,15 +9,16 @@ public class Reader implements Runnable {
 
     private final Exchanger<Queue<String>> readerExchanger;
     private final int bufferSize;
+    private Queue<String> readerBuffer;
 
     public Reader(Exchanger<Queue<String>> readerExchanger, int bufferSize) {
         this.readerExchanger = readerExchanger;
         this.bufferSize = bufferSize;
+        this.readerBuffer = new ConcurrentLinkedQueue<>();
     }
 
     @Override
     public void run() {
-        Queue<String> readerBuffer = new ConcurrentLinkedQueue<>();
         while (true) {
             var uuid = UUID.randomUUID().toString();
             readerBuffer.add(uuid);
